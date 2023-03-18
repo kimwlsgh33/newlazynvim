@@ -9,10 +9,10 @@ M.general = {
     ["<C-e>"] = { "<End>", "end of line" },
 
     -- navigate within insert mode
-    ["<C-h>"] = { "<Left>", "move left" },
-    ["<C-l>"] = { "<Right>", "move right" },
-    ["<C-j>"] = { "<Down>", "move down" },
-    ["<C-k>"] = { "<Up>", "move up" },
+    -- ["<C-h>"] = { "<Left>", "move left" },
+    -- ["<C-l>"] = { "<Right>", "move right" },
+    -- ["<C-j>"] = { "<Down>", "move down" },
+    -- ["<C-k>"] = { "<Up>", "move up" },
   },
 
   n = {
@@ -275,6 +275,10 @@ M.telescope = {
 
     -- theme switcher
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
+
+    -- dap
+    ["<leader>df"] = { "<cmd>Telescope dap frames<cr>" },
+    ["<leader>db"] = { "<cmd>Telescope dap list_breakpoints<cr>" },
   },
 }
 

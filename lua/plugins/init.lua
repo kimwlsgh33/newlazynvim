@@ -143,6 +143,7 @@ local default_plugins = {
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
+    lazy = false,
     event = "InsertEnter",
     dependencies = {
       {
@@ -177,6 +178,7 @@ local default_plugins = {
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
+        "hrsh7th/cmp-cmdline",
       },
     },
 
@@ -184,7 +186,27 @@ local default_plugins = {
       return require "plugins.configs.cmp"
     end,
     config = function(_, opts)
-      require("cmp").setup(opts)
+      local cmp = require "cmp"
+      cmp.setup(opts)
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources(
+          {
+            {
+              name = "cmdline",
+              option = {
+                ignore_cmds = { "Man", "!" },
+              },
+            },
+          }
+        ),
+      })
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
     end,
   },
 
