@@ -149,7 +149,10 @@ local default_plugins = {
       {
         -- snippet plugin
         "L3MON4D3/LuaSnip",
-        dependencies = "rafamadriz/friendly-snippets",
+        dependencies = {
+          "rafamadriz/friendly-snippets",
+          "Neevash/awesome-flutter-snippets",
+        },
         config = function()
           require("plugins.configs.others").luasnip()
         end,
@@ -195,16 +198,14 @@ local default_plugins = {
       cmp.setup(opts)
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
-        sources = cmp.config.sources(
+        sources = cmp.config.sources {
           {
-            {
-              name = "cmdline",
-              option = {
-                ignore_cmds = { "Man", "!" },
-              },
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
             },
-          }
-        ),
+          },
+        },
       })
       cmp.setup.cmdline("/", {
         mapping = cmp.mapping.preset.cmdline(),
