@@ -126,6 +126,10 @@ local plugins = {
   },
 
   "terryma/vim-multiple-cursors",
+  {
+    "vim-autoformat/vim-autoformat",
+    lazy = false,
+  },
 }
 
 return plugins

@@ -26,7 +26,7 @@ local sources = {
   b.formatting.autopep8,
 
   -- rust
-  b.formatting.rustfmt,
+  b.formatting.rustfmt.with { extra_args = { "--emit=stdout" } },
 
   -- markdown
   -- b.diagnostics.markdownlint.with { command = "markdownlint" },

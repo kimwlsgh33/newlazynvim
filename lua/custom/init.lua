@@ -20,6 +20,7 @@ vim.g.multi_cursor_skip_key='<C-x>'
 vim.g.multi_cursor_quit_key='<Esc>'
 
 -- rust-tools
+vim.g.rust_tools_autosave = 1
 
 if vim.g.neovide then
   -- Helper function for transparency formatting
