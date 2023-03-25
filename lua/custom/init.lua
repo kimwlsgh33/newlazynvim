@@ -6,8 +6,20 @@
 --   command = "tabdo wincmd =",
 -- })
 
+-- copilot
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-j>", "copilot#Accept()", { silent = true, expr = true })
+
+
+-- vim-multiple-cursor
+vim.g.multi_cursor_use_default_mapping=0
+-- Default mapping
+vim.g.multi_cursor_next_key='<C-m>'
+vim.g.multi_cursor_prev_key='<C-p>'
+vim.g.multi_cursor_skip_key='<C-x>'
+vim.g.multi_cursor_quit_key='<Esc>'
+
+-- rust-tools
 
 if vim.g.neovide then
   -- Helper function for transparency formatting

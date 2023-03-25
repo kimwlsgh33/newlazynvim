@@ -22,9 +22,8 @@ local sources = {
   b.formatting.clang_format,
 
   -- python
-  -- b.formatting.black.with { extra_args = { "--fast" } },
-  b.formatting.yapf,
-  b.diagnostics.flake8.with { command = "flake8" },
+  -- b.formatting.yapf,
+  b.formatting.autopep8,
 
   -- rust
   b.formatting.rustfmt,

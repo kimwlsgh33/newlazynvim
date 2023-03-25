@@ -50,6 +50,11 @@ local plugins = {
   -- Debugging
   {
     "mfussenegger/nvim-dap",
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+      -- "Pocco81/DAPInstall.nvim",
+    },
     config = function()
       require "custom.configs.dap"
     end,
@@ -119,6 +124,8 @@ local plugins = {
       }
     end,
   },
+
+  "terryma/vim-multiple-cursors",
 }
 
 return plugins
